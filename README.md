@@ -77,7 +77,9 @@ IBM [Cloudant](https://cloudant.com/) is a hosted version of [CouchDB](http://co
 
 ####Set Up
 
-Setting up Cloudant requires entering GeoJSON documents and design documents called "views." 
+Setting up Cloudant for the first time requires you to create a username and password. After you've created an account, click on Account and then CORS. Make sure that "Enable CORS" is checked. (You may also want to restrict access to your domain.) 
+
+Your next step will be to create a database. Click "Add new database" and provide a name. Once you've created a database, click on Permissions in the side column and check "Reader" in the "Everybody Else" row. Your Cloudant account should be ready to go.
 
 ####Adding Points
 
@@ -105,7 +107,9 @@ You don't need to write a reduce function in this case; you should leave that se
 
 ###Mapbox
 
-[Mapbox](https://www.mapbox.com) provides an easy way to create custom maps and mapping applications.  Mapbox is free to use, as long as you stay within the 100mb storage limit and under 50,000 map views.  For most projects this should suffice.  For this project we developed a custom mapping application.  To do this, you must create a project, seelct a map, and save the project.  Onced saved, click the "Project" tab, and select the "info" tab.  Here you will find a "Map ID" that consists of your username and a combination of letters and numbers.  This key will be added to the map.js file so that the application knows where to map your GeoJson.  The [Mapbox JavaScript Library] (https://www.mapbox.com/mapbox.js/api/v2.1.9/) can be used to customize your map.  This library is built on top of [Leaflet](http://leafletjs.com/), and open soure JavaScript library.  [Leaflet](http://leafletjs.com/) is an open source JavaScript library built for creating interactive mobile maps.  If you would like to further customize the interface Leaflet offers many [examples](http://leafletjs.com/reference.html).
+[Mapbox](https://www.mapbox.com) provides an easy way to create custom maps and mapping applications.  Mapbox is free to use, as long as you stay within the 100mb storage limit and under 50,000 map views.  For most projects this should suffice.  For this project we developed a custom mapping application.  To do this, you must create a project, seelct a map, and save the project.  Onced saved, click the "Project" tab, and select the "info" tab.  Here you will find a "Map ID" that consists of your username and a combination of letters and numbers. You'll also see a public key at top. Copy both into the indicated places in your ```map.js``` file.
+
+The [Mapbox JavaScript Library] (https://www.mapbox.com/mapbox.js/api/v2.1.9/) can be used to customize your map.  This library is built on top of [Leaflet](http://leafletjs.com/), and open soure JavaScript library.  [Leaflet](http://leafletjs.com/) is an open source JavaScript library built for creating interactive mobile maps.  If you would like to further customize the interface Leaflet offers many [examples](http://leafletjs.com/reference.html).
 
 ###Bootstrap
 
