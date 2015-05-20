@@ -22,13 +22,21 @@ This project runs with any web server; it does not require the use of  server-si
 
 The project does not require the installation of any database on the server. Rather, you will need accounts at both Mapbox and Cloudant to get started.
 
-###Prerequisites
+###Cloudant
 
-Set up an account at [Mapbox](https://www.mapbox.com) and then create a [new project](https://www.mapbox.com). After you have created a base map, copy the map ID. You will need this ID to connect your project to your map. You will also need to set up an account with [Cloudant](https://cloudant.com/). After you sign up for an account, click "Add New Database" to create a database to store your GeoJSON points.
+IBM [Cloudant](https://cloudant.com/) is a hosted version of [CouchDB](http://couchdb.apache.org/). CouchDB is a document-oriented database that stores data as JSON, uses Javascript for writing Map/Reduce functions, and communicates with applications via HTTP. Cloundant provides a fast and easy way to get started with CouchDB without installing anything on your computer or setting up a server. These characteristics make it easy to store GeoJSON features in the "cloud" and to send those features on demand to users.
 
-###GeoJSON
+####Set Up
 
-[GeoJSON](http://geojson.org/) is the data structure through which this project is laid out.  There are many different ways of formatting GeoJSON, but in order for it to function with MapBox it must match the format show below:
+Setting up Cloudant for the first time requires you to create a username and password. After you've created an account, click on Account and then CORS. Make sure that "Enable CORS" is checked. (You may also want to restrict access to your domain.) 
+
+![Enabling CORS on Cloudant](http://i.imgur.com/p9Ao4mO.png)
+
+Your next step will be to create a database. Click "Add new database" and provide a name. Once you've created a database, click on Permissions in the side column and check "Reader" in the "Everybody Else" row. Your Cloudant account should be ready to go.
+
+####GeoJSON
+
+[GeoJSON](http://geojson.org/) is the data structure used to represent points on the map. There are many different ways of formatting GeoJSON, but in order for it to function with MapBox it must match the format show below:
 
 ```JSON
 {
@@ -71,15 +79,6 @@ Set up an account at [Mapbox](https://www.mapbox.com) and then create a [new pro
 
 Each point is represented as a feature and a collection of more than one point is called a "Feature Collection".  Latitude and longitudes must be done in decimal degrees.
 
-###Cloudant
-
-IBM [Cloudant](https://cloudant.com/) is a hosted version of [CouchDB](http://couchdb.apache.org/). CouchDB is a document-oriented database that stores data as JSON, uses Javascript for writing Map/Reduce functions, and communicates with applications via HTTP. Cloundant provides a fast and easy way to get started with CouchDB without installing anything on your computer or setting up a server. These characteristics make it easy to store GeoJSON features in the "cloud" and to send those features on demand to users.
-
-####Set Up
-
-Setting up Cloudant for the first time requires you to create a username and password. After you've created an account, click on Account and then CORS. Make sure that "Enable CORS" is checked. (You may also want to restrict access to your domain.) 
-
-Your next step will be to create a database. Click "Add new database" and provide a name. Once you've created a database, click on Permissions in the side column and check "Reader" in the "Everybody Else" row. Your Cloudant account should be ready to go.
 
 ####Adding Points
 
